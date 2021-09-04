@@ -113,9 +113,10 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTH_USER_MODEL = 'api.User'
 ANYMAIL = {
 
-    "MAILJET_API_KEY": "<your API key>",
-    "MAILJET_SECRET_KEY": "<your API secret>",
+    "MAILJET_API_KEY": os.environ.get("MAILJET_APIKEY"),
+    "MAILJET_SECRET_KEY": os.environ.get("MAILJET_APISECRET"),
 }
+EMAIL_BACKEND = "anymail.backends.mailjet.EmailBackend"
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
