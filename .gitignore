@@ -23,7 +23,8 @@ media
 .idea/**/gradle.xml
 .idea/**/libraries
 *.iws /out/
-
+.idea
+/.idea
 # Python #
 *.py[cod]
 *$py.class
