@@ -67,6 +67,7 @@ class ValidateUserViewSet(ViewSet):
                 password=request.data.get('password'), username=user_data.username, first_name=user_data.first_name,
                 last_name=user_data.last_name, email=user_data.email
             )
+            user_data.object.delete()
             return Response({'mensaje': 'Usuario validado con exito'})
         return Response({'error': 'El token enviado es incorrecto'}, status=status.HTTP_400_BAD_REQUEST)
 
